@@ -15,7 +15,35 @@ const ProfileComponent = () => {
           <h1 className="text-lg">Jeremy Robson</h1>
         </div>
       </div>
-      <div className="absolute w-80 h-36 rounded-xl z-0  bg-red-500 inset-x-auto inset-y-16"></div>
+      <ul className="flex justify-between md:flex-col items-center md:items-start gap-3 px-6 rounded-b-xl -mt-[0.32rem] py-5 md:py-8 lg:py-5 bg-dblue">
+        <li>
+          <a
+            id="btn"
+            href="/"
+            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+          >
+            Daily
+          </a>
+        </li>
+        <li>
+          <a
+            id="btn"
+            href="/"
+            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+          >
+            Weekly
+          </a>
+        </li>
+        <li>
+          <a
+            id="btn"
+            href="/"
+            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+          >
+            Monthly
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };
