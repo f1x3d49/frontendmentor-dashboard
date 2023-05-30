@@ -1,7 +1,13 @@
 import React from "react";
 import jeremy from "../images/image-jeremy.png";
+import { useContext } from "react";
+import { TimeContext } from "../context/TimeContext/TimeContext";
 
 const ProfileComponent = () => {
+  const { time, setTime } = useContext(TimeContext);
+
+  console.log(time);
+
   return (
     <div className="z-10">
       <div className="relative z-10 w-full h-24 bg-pblue rounded-xl flex items-center justify-center space-x-4">
@@ -17,31 +23,40 @@ const ProfileComponent = () => {
       </div>
       <ul className="flex justify-between md:flex-col items-center md:items-start gap-3 px-6 rounded-b-xl -mt-[0.32rem] py-5 md:py-8 lg:py-5 bg-dblue">
         <li>
-          <a
+          <button
+            onClick={() => {
+              setTime("Daily");
+              console.log(time);
+            }}
             id="btn"
-            href="/"
-            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+            className={`text-deblue hover:text-white transition duration-300  ease-in-out text-base sm:text-lg`}
           >
             Daily
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
+            onClick={() => {
+              setTime("Weekly");
+              console.log(time);
+            }}
             id="btn"
-            href="/"
-            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+            className={`text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg `}
           >
             Weekly
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
+            onClick={() => {
+              setTime("Monthly");
+              console.log(time);
+            }}
             id="btn"
-            href="/"
             className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
           >
             Monthly
-          </a>
+          </button>
         </li>
       </ul>
     </div>
