@@ -32,21 +32,18 @@ const CardComponent = ({ title, current, previous, timeTitle }) => {
         <img src={Img()} alt={title} className="absolute -top-4 right-4" />
       </div>
       {/* Content */}
-      <div className="flex items-center justify-between p-4 bg-dblue rounded-xl relative -mt-[1rem]">
-        <div className="flex flex-col">
-          <h1 className="text-white text-[18px] font-medium">{title}</h1>
-          <h2 className="text-white text-3xl font-light">{current}hrs</h2>
-        </div>
-        <div className="flex flex-col gap-6">
-          <img
-            src={dots}
-            alt="dots"
-            className="self-end hover:cursor-pointer"
-          />
-          <p className="text-pablue font-light text-sm">
-            Last {timeTitle} - {previous} hrs
-          </p>
-        </div>
+      <div className="grid grid-cols-2  p-6 bg-dblue rounded-xl relative -mt-[1rem] md:h-full">
+        <h1 className="text-white text-[18px] font-medium">{title}</h1>
+        <img
+          src={dots}
+          alt="dots"
+          className="self-center justify-self-end hover:cursor-pointer"
+        />
+        <h2 className="text-white text-3xl font-light ">{current}hrs</h2>
+
+        <p className="text-pablue font-light text-sm self-center justify-self-end md:col-start-1 md:self-start">
+          Last {timeTitle} - {previous} hrs
+        </p>
       </div>
     </section>
   );
