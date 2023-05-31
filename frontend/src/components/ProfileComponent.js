@@ -29,7 +29,9 @@ const ProfileComponent = () => {
               console.log(time);
             }}
             id="btn"
-            className={`text-deblue hover:text-white transition duration-300  ease-in-out text-base sm:text-lg`}
+            className={` hover:text-white transition duration-300  ease-in-out text-base sm:text-lg ${
+              time === "Daily" ? "text-white" : "text-deblue"
+            }`}
           >
             Daily
           </button>
@@ -41,7 +43,9 @@ const ProfileComponent = () => {
               console.log(time);
             }}
             id="btn"
-            className={`text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg `}
+            className={`${
+              time === "Weekly" ? "text-white" : "text-deblue"
+            } hover:text-white transition duration-300 ease-in-out text-base sm:text-lg `}
           >
             Weekly
           </button>
@@ -53,7 +57,9 @@ const ProfileComponent = () => {
               console.log(time);
             }}
             id="btn"
-            className="text-deblue hover:text-white transition duration-300 ease-in-out text-base sm:text-lg"
+            className={`${
+              time === "Monthly" ? "text-white" : "text-deblue"
+            } hover:text-white transition duration-300 ease-in-out text-base sm:text-lg`}
           >
             Monthly
           </button>

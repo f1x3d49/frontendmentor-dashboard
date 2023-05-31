@@ -1,12 +1,35 @@
 import React from "react";
 import work from "../images/icon-work.svg";
+import exercise from "../images/icon-exercise.svg";
+import play from "../images/icon-play.svg";
+import care from "../images/icon-self-care.svg";
+import social from "../images/icon-social.svg";
+import study from "../images/icon-study.svg";
 import dots from "../images/icon-ellipsis.svg";
 
 const CardComponent = ({ title }) => {
+  const Img = () => {
+    if (title === "Work") return work;
+    if (title === "Exercise") return exercise;
+    if (title === "Play") return play;
+    if (title === "Care") return care;
+    if (title === "Social") return social;
+    if (title === "Study") return study;
+  };
+
+  const Bg = () => {
+    if (title === "Work") return "bg-lred";
+    if (title === "Exercise") return "bg-lgreen";
+    if (title === "Play") return "bg-sblue";
+    if (title === "Care") return "bg-sorange";
+    if (title === "Social") return "bg-violet";
+    if (title === "Study") return "bg-studyred";
+  };
+
   return (
     <section className="w-full h-auto rounded-xl font-rubik">
-      <div className="bg-lred rounded-t-xl py-6 overflow-hidden relative">
-        <img src={work} alt="work" className="absolute -top-4 right-4" />
+      <div className={`${Bg()} rounded-t-xl py-6 overflow-hidden relative`}>
+        <img src={Img()} alt="work" className="absolute -top-4 right-4" />
       </div>
       {/* Content */}
       <div className="flex items-center justify-between p-4 bg-dblue rounded-xl relative -mt-[1rem]">
