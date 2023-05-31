@@ -6,12 +6,49 @@ import { TimeContext } from "./context/TimeContext/TimeContext";
 
 function App() {
   const { time, setTime } = useContext(TimeContext);
+
   return (
     <div className="min-h-screen bg-vdblue flex flex-col gap-4 py-12 px-4">
       <ProfileComponent />
-      {timeData.map((data, key) => {
-        return <CardComponent key={key} title={data.title} />;
-      })}
+      {time === "Weekly"
+        ? timeData.map((data, key) => {
+            return (
+              <CardComponent
+                key={key}
+                title={data.title}
+                current={data.timeframes.weekly.current}
+                previous={data.timeframes.weekly.previous}
+                timeTitle="Week"
+              />
+            );
+          })
+        : null}
+      {time === "Monthly"
+        ? timeData.map((data, key) => {
+            return (
+              <CardComponent
+                key={key}
+                title={data.title}
+                current={data.timeframes.monthly.current}
+                previous={data.timeframes.monthly.previous}
+                timeTitle="Month"
+              />
+            );
+          })
+        : null}
+      {time === "Daily"
+        ? timeData.map((data, key) => {
+            return (
+              <CardComponent
+                key={key}
+                title={data.title}
+                current={data.timeframes.daily.current}
+                previous={data.timeframes.daily.previous}
+                timeTitle="Day"
+              />
+            );
+          })
+        : null}
     </div>
   );
 }
