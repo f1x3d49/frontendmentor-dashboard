@@ -39,7 +39,9 @@ const CardComponent = ({ title, current, previous, timeTitle }) => {
           alt="dots"
           className="self-center justify-self-end hover:cursor-pointer"
         />
-        <h2 className="text-white text-3xl font-light ">{current}hrs</h2>
+        <h2 className="text-white text-3xl font-light md:text-5xl">
+          {current}hrs
+        </h2>
 
         <p className="text-pablue font-light text-sm self-center justify-self-end md:col-start-1 md:self-start">
           Last {timeTitle} - {previous} hrs

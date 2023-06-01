@@ -8,7 +8,7 @@ function App() {
   const { time, setTime } = useContext(TimeContext);
 
   return (
-    <div className="md:grid md:grid-cols-4 md:grid-rows-2 md:p-20 md:gap-16 min-h-screen bg-vdblue flex flex-col gap-4 py-12 px-4 ">
+    <div className="md:grid md:grid-cols-4 md:grid-rows-2 md:px-20 md:py-36 md:gap-16 min-h-screen bg-vdblue flex flex-col gap-4 py-12 px-4 ">
       <ProfileComponent />
       {time === "Weekly"
         ? timeData.map((data, key) => {
